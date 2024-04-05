@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "alert-topdesk-teams"
+version = "0.1.0"
+description = "cronjob de alerta de chamados do topdesk no teams"
+authors = ["Ewald Werner Junior <junior.werner@somosagility.com.br>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+sqlalchemy = "^2.0.25"
+tinydb = "^4.8.0"
+pymsteams = "^0.2.2"
+prettyconf = "^2.2.1"
+pytz = "^2024.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
