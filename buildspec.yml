@@ -6,11 +6,11 @@ phases:
     pre_build:
         commands:
             - pip install poetry
-            
+
     build:
         commands:
             - poetry config virtualenvs.create false && poetry install --no-dev
             
 artifacts:
     files:
-        - 'target/service_send_message.jar'
+        - target/ServiceSendMessage.jar
