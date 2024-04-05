@@ -54,7 +54,6 @@ docs/_build/
 .pytest.restar
 README.rst
 
-.env
 .venv
 venv
 
