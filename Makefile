@@ -19,7 +19,7 @@ ecr-authenticate:
 	aws ecr get-login-password \
 		--region us-east-1 | docker login \
 		--username AWS \
-		--password-stdin $(AWS_ACCOUNT_ID).dkr.ecr.us-east-1.amazonaws.com
+		--password-stdin 230291670968.dkr.ecr.us-east-1.amazonaws.com
 
 build-image:
 	docker  build -t $(PROJECT_NAME) .
