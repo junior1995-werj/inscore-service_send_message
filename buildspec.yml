@@ -11,6 +11,3 @@ phases:
         commands:
             - poetry config virtualenvs.create false && poetry install --no-dev
             
-artifacts:
-    files:
-        - target/ServiceSendMessage.jar
