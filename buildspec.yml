@@ -5,18 +5,19 @@ phases:
         commands:
           - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 230291670968.dkr.ecr.us-east-1.amazonaws.com
           - CURRENT_VERSION=$(echo aws ecr describe-images --repository-name inscore/service_send_message --region us-east-1 --query 'sort_by(imageDetails,& imagePushedAt)[-1].imageTags' | grep v | grep -Eo '[0-9]' |  head -1)
+          - IMAGE_TAG=latest
 
     build:
         commands:
           - docker  build -t service_send_message .
-          - docker tag service_send_message:latest 230291670968.dkr.ecr.us-east-1.amazonaws.com/inscore/service_send_message:v7
+          - docker tag service_send_message:latest 230291670968.dkr.ecr.us-east-1.amazonaws.com/inscore/service_send_message:latest
     post_build:
         commands:
           - echo Build completed on `date`
           - echo Pushing the Docker images...
-          - docker push 230291670968.dkr.ecr.us-east-1.amazonaws.com/inscore/service_send_message:v7
+          - docker push 230291670968.dkr.ecr.us-east-1.amazonaws.com/inscore/service_send_message:latest
           - echo Writing image definitions file...
-          - printf '[{"name":"hello-world","imageUri":"%s"}]' 230291670968.dkr.ecr.us-east-1.amazonaws.com/inscore/service_send_message:v8 > imagedefinitions.json
+          - printf '[{"name":"hello-world","imageUri":"%s"}]' 230291670968.dkr.ecr.us-east-1.amazonaws.com/inscore/service_send_message:latest > imagedefinitions.json
 
             
 artifacts:
