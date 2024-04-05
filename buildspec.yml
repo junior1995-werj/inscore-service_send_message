@@ -1,0 +1,16 @@
+version: 0.2
+phases:
+    install:
+        runtime-versions:
+            python: 3.11
+    pre_build:
+        commands:
+            - pip install poetry
+            - apt-get update && apt-get install -y --no-install-recommends libpq-dev python3-dev gcc python3-psycopg2 tzdata gettext && rm -rf /var/lib/apt/lists/*
+    build:
+        commands:
+            - poetry config virtualenvs.create false && poetry install --no-dev
+            
+artifacts:
+    files:
+        - 'target/service_send_message.jar'
