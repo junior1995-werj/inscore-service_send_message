@@ -16,3 +16,5 @@ phases:
 artifacts:
     files:
         - './*'
+        - './handlers/*'
+        - './data_models/*'
