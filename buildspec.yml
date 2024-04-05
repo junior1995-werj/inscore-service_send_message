@@ -3,9 +3,11 @@ phases:
     install:
         runtime-versions:
             python: 3.11
+
     pre_build:
         commands:
             - pip install poetry
+            - cp . ./
 
     build:
         commands:
