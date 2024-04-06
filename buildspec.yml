@@ -10,7 +10,7 @@ phases:
     build:
         commands:
           - docker  build -t service_send_message .
-          - docker tag service_send_message:latest 230291670968.dkr.ecr.us-east-1.amazonaws.com/inscore/service_send_message:latest
+          - docker tag service_send_message:latest 230291670968.dkr.ecr.us-east-1.amazonaws.com/inscore/service_send_message:$(IMAGE_TAG)
     post_build:
         commands:
           - echo Build completed on `date`
