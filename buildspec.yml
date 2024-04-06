@@ -8,14 +8,14 @@ phases:
     build:
         commands:
           - docker  build -t service_send_message:latest .
-          - docker tag service_send_message:latest 230291670968.dkr.ecr.us-east-1.amazonaws.com/inscore/service_send_message:latest
+          - docker tag service_send_message:latest 230291670968.dkr.ecr.us-east-1.amazonaws.com/inscore/service_send_message:v10
     post_build:
         commands:
           - echo Build completed on `date`
           - echo Pushing the Docker images...
-          - docker push 230291670968.dkr.ecr.us-east-1.amazonaws.com/inscore/service_send_message:latest
+          - docker push 230291670968.dkr.ecr.us-east-1.amazonaws.com/inscore/service_send_message:v10
           - echo Writing image definitions file...
-          - printf '[{"name":"hello-world","imageUri":"%s"}]' 230291670968.dkr.ecr.us-east-1.amazonaws.com/inscore/service_send_message:$IMAGE > imagedefinitions.json
+          - printf '[{"name":"hello-world","imageUri":"%s"}]' 230291670968.dkr.ecr.us-east-1.amazonaws.com/inscore/service_send_message:v10 > imagedefinitions.json
 
             
 artifacts:
