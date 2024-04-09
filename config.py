@@ -4,9 +4,8 @@ from prettyconf import config
 class Settings:
 
     SELLERS_API = os.environ["SELLERS_API"]
-    TOKEN_SELLERS = os.environ["TOKEN_SELLERS"]
+    TOKEN_SELLERS = os.environ["TOKEN_SELLERS_API"]
     SCHEDULE_API = os.environ["SCHEDULE_API"]
     TOKEN_SCHEDULE = os.environ["TOKEN_SCHEDULE"]
 
-print(os.environ)
 settings = Settings()
