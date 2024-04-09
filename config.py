@@ -8,4 +8,5 @@ class Settings:
     SCHEDULE_API = os.environ["SCHEDULE_API"]
     TOKEN_SCHEDULE = os.environ["TOKEN_SCHEDULE"]
 
+print(os.environ)
 settings = Settings()
