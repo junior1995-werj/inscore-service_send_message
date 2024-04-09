@@ -58,7 +58,4 @@ README.rst
 venv
 
 # remove files big-ip
-bigip_user.conf
-user_alert.conf
-
-incidents.json
+.env
