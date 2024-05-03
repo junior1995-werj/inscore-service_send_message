@@ -25,7 +25,7 @@ class SellersApi:
         if response.status_code in [200, 201]:
             for value in response.json():
                 for groups in message['send_to']['groups']:
-                    if groups == value['group_name']:
+                    if groups == value['group_name'] and value['group_id'] not in list_groups:
                         list_groups.append(value['group_id'])
 
         return list_groups
